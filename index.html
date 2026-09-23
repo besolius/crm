@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Catalog produse 2024/2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --ground:#E9E4DC; --ground-2:#DDD6CB; --ink:#2B2621; --ink-soft:#6E655B;
+  --bar:#FBF9F5; --line:#D3CBBE; --accent:#E3A814; --accent-ink:#2B2105;
+  --shadow:0 18px 40px -18px rgba(60,40,15,.45);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#1B1916; --ground-2:#25221E; --ink:#EEE8DF; --ink-soft:#A89E92;
+    --bar:#2A2622; --line:#3C3731; --accent:#F0B82A; --accent-ink:#241A02;
+    --shadow:0 18px 40px -16px rgba(0,0,0,.7); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#1B1916; --ground-2:#25221E; --ink:#EEE8DF; --ink-soft:#A89E92;
+  --bar:#2A2622; --line:#3C3731; --accent:#F0B82A; --accent-ink:#241A02;
+  --shadow:0 18px 40px -16px rgba(0,0,0,.7); color-scheme:dark;
+}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:radial-gradient(ellipse at 50% 35%,var(--ground) 0%,var(--ground-2) 100%);background-color:var(--ground);color:var(--ink);
+  font-family:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;overflow:hidden;-webkit-tap-highlight-color:transparent}
+.app{height:100%;height:100dvh;min-height:520px;display:flex;flex-direction:column}
+.stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:14px 16px;position:relative}
+#bookWrap{margin:0 auto;max-width:100%}
+#book{filter:drop-shadow(0 20px 30px rgba(40,25,10,.28))}
+.page{background:#fff;overflow:hidden}
+.page img{width:100%;height:100%;object-fit:cover;display:block;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.page .ph{position:absolute;inset:0;display:grid;place-items:center;color:#b3a996;font:600 13px/1 "Figtree",sans-serif;background:#f4f0ea}
+.hot{position:absolute;display:block;border-radius:6px;cursor:pointer;z-index:3}
+.hot:hover,.hot:focus-visible{background:rgba(227,168,20,.18);outline:2px solid rgba(227,168,20,.7)}
+.side{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
+  background:var(--bar);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow);z-index:5}
+.side:disabled{opacity:.35;cursor:default}
+.side.prev{left:12px}.side.next{right:12px}
+@media (max-width:700px){.side{display:none}}
+/* toolbar */
+.bar{background:var(--bar);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));
+  display:flex;align-items:center;gap:12px}
+.btn{height:38px;min-width:38px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--ink);
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 14px/1 inherit;font-family:inherit;cursor:pointer}
+.btn:hover{background:var(--ground)}
+.btn:focus-visible,.side:focus-visible,.hot:focus-visible,.thumb:focus-visible,.sec:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn svg,.side svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.scrub{flex:1;display:flex;align-items:center;gap:12px;min-width:0}
+.scrub input{flex:1;min-width:0;accent-color:var(--accent)}
+.count{font-variant-numeric:tabular-nums;font-weight:600;font-size:14px;white-space:nowrap;color:var(--ink-soft)}
+.count b{color:var(--ink)}
+.lbl{display:inline}
+@media (max-width:560px){.lbl{display:none}.bar{gap:8px}.hide-sm{display:none}}
+/* panel */
+.veil{position:fixed;inset:0;background:rgba(20,15,10,.45);z-index:20;display:flex;justify-content:flex-start}
+.panel{width:min(420px,100%);height:100%;background:var(--bar);color:var(--ink);display:flex;flex-direction:column;box-shadow:var(--shadow);
+  animation:slide .22s ease-out}
+@keyframes slide{from{transform:translateX(-24px);opacity:.6}}
+.panel header{display:flex;align-items:center;justify-content:space-between;padding:calc(16px + env(safe-area-inset-top,0px)) 16px 12px;border-bottom:1px solid var(--line)}
+.panel h2{margin:0;font-size:20px;font-weight:700;letter-spacing:-.01em}
+.panel .body{overflow:auto;padding:12px 16px 28px}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin:14px 0 8px}
+.secs{display:grid;gap:2px;margin-bottom:8px}
+.sec{display:flex;align-items:baseline;gap:14px;padding:10px 8px;border-radius:8px;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.sec:hover{background:var(--ground)}
+.sec .n{font-variant-numeric:tabular-nums;font-weight:400;font-size:22px;width:2ch;color:var(--ink-soft);letter-spacing:-.02em}
+.sec .t{font-weight:600;font-size:15px}
+.sec.on .n{color:var(--accent)}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:12px}
+.thumb{border:0;background:none;padding:0;cursor:pointer;color:var(--ink-soft);font:600 12px/1 inherit;font-family:inherit;display:grid;gap:6px;justify-items:center}
+.thumb img{width:100%;aspect-ratio:991/1406;object-fit:cover;border-radius:3px;border:2px solid transparent;background:var(--ground)}
+.thumb.on img{border-color:var(--accent)}
+.thumb.on{color:var(--ink)}
+/* zoom */
+.zoom{position:fixed;inset:0;background:var(--ground-2);z-index:30;display:flex;flex-direction:column}
+.zoom .zbar{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;background:var(--bar);border-bottom:1px solid var(--line)}
+.zoom .zscroll{flex:1;overflow:auto;-webkit-overflow-scrolling:touch}
+.zoom .zin{display:flex;justify-content:center;gap:0;padding:16px;margin:0 auto;width:max-content;min-width:100%;box-sizing:border-box}
+.zoom .zin img{display:block;height:auto;max-width:none;background:#fff;box-shadow:var(--shadow)}
+.zgroup{display:flex;gap:8px;align-items:center}
+.zpct{font-variant-numeric:tabular-nums;font-weight:600;width:4.2ch;text-align:center;font-size:14px}
+@media (prefers-reduced-motion:reduce){.panel{animation:none}}
+/* fallback: pages stacked, if the flipbook script can't run */
+html:not(.flip) body{overflow:auto}
+html:not(.flip) .app{height:auto;min-height:0}
+html:not(.flip) .bar,html:not(.flip) .side{display:none}
+html:not(.flip) #bookWrap{width:auto!important;max-width:760px}
+html:not(.flip) #book{filter:none;display:grid;gap:12px}
+html:not(.flip) .page{box-shadow:var(--shadow)}
+html:not(.flip) .page .ph{display:none}
+</style></head><body>
+
+<div class="app">
+  <div class="stage" id="stage">
+    <button class="side prev" id="sidePrev" aria-label="Pagina anterioară"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div id="bookWrap"><div id="book"></div></div>
+    <button class="side next" id="sideNext" aria-label="Pagina următoare"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div>
+  <div class="bar">
+    <button class="btn primary" id="tocBtn" aria-label="Cuprins"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span class="lbl">Cuprins</span></button>
+    <div class="scrub">
+      <button class="btn" id="prev" aria-label="Pagina anterioară"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <input type="range" id="range" min="1" max="44" value="1" aria-label="Mergi la pagina" class="hide-sm">
+      <span class="count" id="count"><b>1</b> / 44</span>
+      <button class="btn" id="next" aria-label="Pagina următoare"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+    <button class="btn" id="zoomBtn" aria-label="Mărește pagina"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg><span class="lbl">Mărește</span></button>
+    <button class="btn hide-sm" id="fsBtn" aria-label="Ecran complet"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+  </div>
+</div>
+
+<div class="veil" id="veil" hidden>
+  <aside class="panel" role="dialog" aria-label="Cuprins">
+    <header><h2>Cuprins</h2><button class="btn" id="closeToc" aria-label="Închide"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header>
+    <div class="body">
+      <div class="eyebrow">Secțiuni</div>
+      <div class="secs" id="secs"></div>
+      <div class="eyebrow">Toate paginile</div>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+  </aside>
+</div>
+
+<div class="zoom" id="zoom" hidden>
+  <div class="zbar">
+    <span class="count" id="zlabel"></span>
+    <div class="zgroup">
+      <button class="btn" id="zout" aria-label="Micșorează"><svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button>
+      <span class="zpct" id="zpct">100%</span>
+      <button class="btn" id="zinb" aria-label="Mărește"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+      <button class="btn" id="zclose" aria-label="Închide"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+  </div>
+  <div class="zscroll" id="zscroll"><div class="zin" id="zin"></div></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+<script>
+(function(){
+const N=44, RATIO=991/1406;
+const src=i=>`pages/p-${String(i).padStart(2,'0')}.jpg`;
+const tsrc=i=>`thumbs/p-${String(i).padStart(2,'0')}.jpg`;
+const SECTIONS=[[4,"Mesajul lui Gregg Maughan, CEO"],[6,"Băuturi și geluri"],[12,"Produse apicole"],[14,"Suplimente alimentare"],[24,"Controlul greutății"],[28,"Îngrijirea pielii"],[36,"Îngrijire personală"],[42,"Oportunitate Forever"]];
+// clickable areas on the contents page (page 3), as fractions of the page
+const HOTS=[[4,.05,.07,.46,.14],[6,.05,.27,.40,.11],[12,.05,.39,.40,.10],[14,.05,.50,.40,.14],[24,.05,.66,.40,.11],[28,.55,.27,.40,.11],[36,.55,.39,.40,.10],[42,.55,.50,.40,.10]];
+const $=id=>document.getElementById(id);
+const book=$('book');
+
+document.documentElement.classList.add('flip');
+// build pages (or use the ones already in the markup)
+const pre=book.querySelectorAll('.page');
+for(let i=1;i<=N;i++){
+  if(pre.length){const d=pre[i-1];d.dataset.density=(i===1||i===N)?'hard':'soft';
+    if(i===3)addHots(d);continue}
+  const d=document.createElement('div');d.className='page';d.dataset.density=(i===1||i===N)?'hard':'soft';
+  d.innerHTML=`<div class="ph">${i}</div><img alt="Pagina ${i}" data-src="${src(i)}" style="position:relative">`;
+  if(i===3)addHots(d);
+  book.appendChild(d);
+}
+function addHots(d){HOTS.forEach(([p,x,y,w,h])=>{const a=document.createElement('a');a.className='hot';a.href='#p'+p;a.setAttribute('aria-label','Mergi la pagina '+p);
+    Object.assign(a.style,{left:x*100+'%',top:y*100+'%',width:w*100+'%',height:h*100+'%'});
+    a.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();go(p)});
+    a.addEventListener('mousedown',e=>e.stopPropagation());a.addEventListener('touchstart',e=>e.stopPropagation(),{passive:true});
+    d.appendChild(a)})}
+const pages=[...book.children];
+function load(i){const img=pages[i-1]&&pages[i-1].querySelector('img');if(img&&img.dataset.src){img.src=img.dataset.src;delete img.dataset.src}}
+function loadAround(i){for(let k=i-4;k<=i+6;k++)if(k>=1&&k<=N)load(k)}
+
+// sizing: fit the book inside the stage
+function fit(){
+  const st=$('stage'),cs=getComputedStyle(st);
+  const aw=st.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight)-(innerWidth>700?120:0);
+  const ah=st.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom);
+  let w=Math.min(aw,ah*RATIO*2);
+  if(w<400) w=Math.min(aw,ah*RATIO);
+  $('bookWrap').style.width=Math.floor(w)+'px';
+}
+addEventListener('resize',fit);fit();
+
+let start=1;const m=/^#p?(\d+)$/.exec(location.hash||'');if(m)start=Math.min(N,Math.max(1,+m[1]));
+loadAround(start);
+
+let pf;
+try{
+pf=new St.PageFlip(book,{width:495,height:703,size:'stretch',minWidth:200,maxWidth:1400,minHeight:284,maxHeight:1990,
+  showCover:true,maxShadowOpacity:.35,mobileScrollSupport:false,usePortrait:true,flippingTime:700,startPage:start-1,autoSize:true});
+pf.loadFromHTML(pages);
+}catch(err){document.documentElement.classList.remove('flip');for(let k=1;k<=N;k++)load(k);console.error(err);return;}
+
+function cur(){return pf.getCurrentPageIndex()+1}
+function visible(){ // pages currently on screen
+  const i=cur();
+  if(pf.getOrientation()==='portrait'||i===1||i===N) return [i];
+  return i%2===0?[i,i+1].filter(x=>x<=N):[i-1,i];
+}
+function sync(){
+  const v=visible();loadAround(v[0]);
+  $('count').innerHTML=`<b>${v.join('–')}</b> / ${N}`;
+  $('range').value=v[0];
+  const first=v[0]===1,last=v[v.length-1]===N;
+  $('prev').disabled=$('sidePrev').disabled=first;$('next').disabled=$('sideNext').disabled=last;
+  try{history.replaceState(null,'','#p'+v[0])}catch(e){}
+}
+pf.on('flip',sync);pf.on('changeOrientation',sync);sync();
+
+function go(p){p=Math.min(N,Math.max(1,p));loadAround(p);if(Math.abs(p-cur())<=2)pf.flip(p-1);else pf.turnToPage(p-1);sync();}
+$('prev').onclick=$('sidePrev').onclick=()=>pf.flipPrev();
+$('next').onclick=$('sideNext').onclick=()=>pf.flipNext();
+$('range').oninput=e=>go(+e.target.value);
+
+// contents panel
+const secs=$('secs'),thumbs=$('thumbs');
+SECTIONS.forEach(([p,t])=>{const b=document.createElement('button');b.className='sec';b.dataset.p=p;
+  b.innerHTML=`<span class="n">${String(p).padStart(2,'0')}</span><span class="t">${t}</span>`;b.onclick=()=>{closeToc();go(p)};secs.appendChild(b)});
+for(let i=1;i<=N;i++){const b=document.createElement('button');b.className='thumb';b.dataset.p=i;b.setAttribute('aria-label','Pagina '+i);
+  b.innerHTML=`<img loading="lazy" alt="" src="${tsrc(i)}"><span>${i}</span>`;b.onclick=()=>{closeToc();go(i)};thumbs.appendChild(b)}
+function openToc(){const v=visible();
+  thumbs.querySelectorAll('.thumb').forEach(t=>t.classList.toggle('on',v.includes(+t.dataset.p)));
+  let s=0;SECTIONS.forEach(([p],k)=>{if(v[0]>=p)s=k});secs.querySelectorAll('.sec').forEach((b,k)=>b.classList.toggle('on',k===s&&v[0]>=4));
+  $('veil').hidden=false;$('closeToc').focus();
+  const on=thumbs.querySelector('.thumb.on');if(on)on.scrollIntoView({block:'center'});}
+function closeToc(){$('veil').hidden=true}
+$('tocBtn').onclick=openToc;$('closeToc').onclick=closeToc;
+$('veil').addEventListener('click',e=>{if(e.target===$('veil'))closeToc()});
+
+// zoom
+let z=1;
+function renderZoom(){const zi=$('zin'),sc=$('zscroll');const v=visible();
+  const base=Math.min((sc.clientWidth-32)/v.length,(sc.clientHeight-32)*RATIO);
+  zi.querySelectorAll('img').forEach(im=>im.style.width=Math.round(base*z)+'px');$('zpct').textContent=Math.round(z*100)+'%';}
+function openZoom(){const v=visible();$('zin').innerHTML=v.map(i=>`<img alt="Pagina ${i}" src="${src(i)}">`).join('');
+  $('zlabel').innerHTML=`Pagina <b>${v.join('–')}</b>`;z=1;$('zoom').hidden=false;renderZoom();$('zclose').focus();}
+function setZ(n,cx,cy){const sc=$('zscroll');const old=z;z=Math.min(4,Math.max(1,n));
+  const fx=(sc.scrollLeft+(cx??sc.clientWidth/2))/sc.scrollWidth,fy=(sc.scrollTop+(cy??sc.clientHeight/2))/sc.scrollHeight;
+  renderZoom();if(z!==old){sc.scrollLeft=fx*sc.scrollWidth-(cx??sc.clientWidth/2);sc.scrollTop=fy*sc.scrollHeight-(cy??sc.clientHeight/2);}}
+$('zoomBtn').onclick=openZoom;$('zclose').onclick=()=>{$('zoom').hidden=true};
+$('zinb').onclick=()=>setZ(z+.5);$('zout').onclick=()=>setZ(z-.5);
+$('zin').addEventListener('dblclick',e=>{const r=$('zscroll').getBoundingClientRect();setZ(z>1?1:2.5,e.clientX-r.left,e.clientY-r.top)});
+$('zscroll').addEventListener('wheel',e=>{if(e.ctrlKey){e.preventDefault();const r=$('zscroll').getBoundingClientRect();setZ(z*(e.deltaY<0?1.15:1/1.15),e.clientX-r.left,e.clientY-r.top)}},{passive:false});
+// pinch
+let pd=0,pz=1;
+$('zscroll').addEventListener('touchstart',e=>{if(e.touches.length===2){pd=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);pz=z}},{passive:true});
+$('zscroll').addEventListener('touchmove',e=>{if(e.touches.length===2&&pd){e.preventDefault();const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+  const r=$('zscroll').getBoundingClientRect();setZ(pz*d/pd,(e.touches[0].clientX+e.touches[1].clientX)/2-r.left,(e.touches[0].clientY+e.touches[1].clientY)/2-r.top)}},{passive:false});
+$('zscroll').addEventListener('touchend',()=>{pd=0});
+addEventListener('resize',()=>{if(!$('zoom').hidden)renderZoom()});
+
+// fullscreen
+$('fsBtn').onclick=()=>{try{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}};
+
+// keyboard
+addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeToc();$('zoom').hidden=true;return}
+  if(!$('zoom').hidden||!$('veil').hidden)return;
+  if(e.key==='ArrowRight'||e.key==='PageDown')pf.flipNext();
+  else if(e.key==='ArrowLeft'||e.key==='PageUp')pf.flipPrev();
+  else if(e.key==='Home')go(1);else if(e.key==='End')go(N);
+});
+})();
+</script>
+
+</body></html>
